@@ -34,6 +34,7 @@ char *_strdup(const char *strr)
 {
 	int lengths = 0;
 	char *rt;
+	int i;
 
 	if (strr == NULL)
 		return (NULL);
@@ -45,7 +46,7 @@ char *_strdup(const char *strr)
 	if (!rt)
 		return (NULL);
 
-	for (int i = 0; i <= lengths; i++)
+	for (i = 0; i <= lengths; i++)
 	{
 		rt[i] = strr[i];
 	}

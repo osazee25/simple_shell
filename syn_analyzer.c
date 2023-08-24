@@ -62,6 +62,7 @@ char *get_path(t_info *inf, char *path_str, char *_cmd)
 {
 	int pres_pos = 0;
 	char *paths;
+	int x;
 
 	if (!path_str)
 	return (NULL);
@@ -73,7 +74,7 @@ char *get_path(t_info *inf, char *path_str, char *_cmd)
 		return (_cmd);
 	}
 
-	for (int x = 0; ; x++)
+	for (x = 0; ; x++)
 	{
 		if (!path_str[x] || path_str[x] == ':')
 		{

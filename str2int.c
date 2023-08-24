@@ -31,7 +31,9 @@ int interact(t_info *details)
 
 int is_delimiter(char ch, char *delimiter)
 {
-	for (int i = 0; delimiter[i] != '\0'; i++)
+	int i,
+
+	for (i = 0; delimiter[i] != '\0'; i++)
 	{
 		if (delimiter[i] == ch)
 		{
