@@ -47,18 +47,13 @@ int change_cd(t_info *details)
 
 	c_dir_ret = 0;
 	current_dir = getcwd(buff, 1024);
-
 	if (!current_dir)
-	{
 		_puts("TODO: >>getcwd failure emsg here<<\n");
-	}
 	else if (!details->av[1])
 	{
 		dir = get_env(details, "HOME=");
 		if (!dir)
-		{
 			dir = get_env(details, "PWD=");
-		}
 		c_dir_ret = chdir(dir ? dir : "/");
 	}
 	else if (_strcmp(details->av[1], "-") == 0)
@@ -75,10 +70,7 @@ int change_cd(t_info *details)
 	c_dir_ret = chdir(old_pwd ? old_pwd : "/");
 	}
 	else
-	{
 		c_dir_ret = chdir(details->av[1]);
-	}
-
 	if (c_dir_ret == -1)
 	{
 		err_print(details, "can't cd into ");
@@ -91,7 +83,6 @@ int change_cd(t_info *details)
 		new_pwd = getcwd(buff, 1024);
 		set_env(details, "PWD", new_pwd);
 	}
-
 	return (0);
 }
 

@@ -13,20 +13,21 @@ int atoi_error(char *str)
 
 	if (*str == '+')
 		str++;
-
 	while (str[i] != '\0')
 	{
-	if (str[i] >= '0' && str[i] <= '9') {
-            res *= 10;
-            res += (str[i] - '0');
-            if (res > INT_MAX)
-                return (-1);
-        } else {
-            return (-1);
-        }
-	i++;
+		if (str[i] >= '0' && str[i] <= '9')
+	{
+		res *= 10;
+		res += (str[i] - '0');
+		if (res > INT_MAX)
+		return (-1);
 	}
-
+		else
+		{
+			return (-1);
+		}
+		i++;
+	}
 	return (res);
 }
 
@@ -56,7 +57,6 @@ void err_print(t_info *inf, char *e_str)
  * Return: characters printed number
  */
 
-
 int print_dec(int in, int fd)
 {
 	int j, cnt = 0;
@@ -65,18 +65,16 @@ int print_dec(int in, int fd)
 
 	if (fd == STDERR_FILENO)
 		put_char = putchar_err;
-
 	if (in < 0)
 	{
 	absolute = -in;
 	put_char('-');
 	cnt++;
-	} 
+	}
 	else
 	{
 		absolute = in;
 	}
-
 	current = absolute;
 	j = 1000000000;
 
@@ -90,10 +88,8 @@ int print_dec(int in, int fd)
 	current %= j;
 	j /= 10;
 	}
-
 	put_char('0' + current);
 	cnt++;
-
 	return (cnt);
 }
 
@@ -118,19 +114,15 @@ char *num_conv(long int num, int _base, int _flag)
 	n = -num;
 	sign = '-';
 	}
-
 	arr = _flag & LOWCASE_CONV ? "0123456789abcdef" : "0123456789ABCDEF";
 	pt = &buff[49];
 	*pt = '\0';
-
 	for (; n != 0; n /= _base)
 	{
 		*--pt = arr[n % _base];
 	}
-
 	if (sign)
 		*--pt = sign;
-
 	return (pt);
 }
 
@@ -147,11 +139,11 @@ void comment_rem(char *buffer)
 
 	while (buffer[j] != '\0')
 	{
-		if (buffer[j] == '#' && (!j || buffer[j - 1] == ' '))
-		{
-			buffer[j] = '\0';
-			break;
-		}
-		j++;
+	if (buffer[j] == '#' && (!j || buffer[j - 1] == ' '))
+	{
+		buffer[j] = '\0';
+		break;
+	}
+	j++;
 	}
 }

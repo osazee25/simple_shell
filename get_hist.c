@@ -75,7 +75,7 @@ int rd_hist(t_info *details)
 	char *buff = NULL, *file_name = get_history(details);
 
 	if (!file_name)
-		return 0;
+		return (0);
 	fd = open(file_name, O_RDONLY);
 	free(file_name);
 	if (fd == -1)
@@ -118,9 +118,7 @@ int rd_hist(t_info *details)
 	free(buff);
 	details->hist_cnt = ln_cnt;
 	for (; details->hist_cnt >= HIST_LIMIT; details->hist_cnt--)
-	{
-		rem_node_at_index(&(details->hist), 0);
-	}
+	rem_node_at_index(&(details->hist), 0);
 	hist_renum(details);
 	return (details->hist_cnt);
 }
@@ -157,9 +155,8 @@ int hist_build(t_info *details, char *buff, int ln_cnt)
 int hist_renum(t_info *details)
 {
 	int j;
-
 	t_list *node = details->hist;
-	
+
 	for (j = 0; node; j++)
 	{
 		node->number = j;
