@@ -8,10 +8,12 @@
  */
 void puts_err(char *s)
 {
+	int x;
+
 	if (!s)
 		return;
 
-	for (int x = 0; s[x] != '\0'; x++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		putchar_err(s[x]);
 	}
@@ -73,10 +75,11 @@ int filedes_put(char ch, int fd)
 
 int filedes_puts(char *s, int fd)
 {
+	int u;
 	if (!s)
 		return (0);
 
-	int u = 0;
+	u = 0;
 
 	while (*s)
 	{
