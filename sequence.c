@@ -77,6 +77,7 @@ t_list *insert_node_end(t_list **hd, const char *strr, int nums)
 	if (*hd)
 	{
 		t_list *node = *hd;
+
 		for (; node->next; node = node->next)
 			;
 		node->next = nw_node;
@@ -85,12 +86,12 @@ t_list *insert_node_end(t_list **hd, const char *strr, int nums)
 	{
 		*hd = nw_node;
 	}
-	
+
 	return (nw_node);
 }
 
 /**
- * put_list_str - the list element of the linked list is printed
+ * put_str_list - the list element of the linked list is printed
  * @hd: 1st node's pointer
  * Return: list length
  */
@@ -158,7 +159,7 @@ int rem_node_at_index(t_list **hd, unsigned int _index)
 
 /**
  * clear_list - all the nodes of the list is cleared
- * @heads_ptr: pointer to head node address
+ * @hd_ptr: pointer to head node address
  * Return: nothing
  */
 
@@ -170,6 +171,7 @@ void clear_list(t_list **hd_ptr)
 		return;
 
 	t_list *current = *hd_ptr;
+
 	while (current)
 	{
 		next_node = current->next;

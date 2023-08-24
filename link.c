@@ -34,9 +34,8 @@ int is_linked(t_info *inf, char *buffer, size_t *pp)
 	*pp = x;
 	return (1);
 }
-
 /**
- * chk_chain - confirms if the next chain is linked
+ * chk_link - confirms if the next chain is linked
  * @inf: struct parameter
  * @buffer: buffer
  * @pp: current position address in buf
@@ -45,8 +44,6 @@ int is_linked(t_info *inf, char *buffer, size_t *pp)
  *
  * Return: nothing
  */
-
-
 void chk_link(t_info *inf, char *buffer, size_t *pp, size_t x, size_t _len)
 {
 	size_t y = *pp;
@@ -70,15 +67,12 @@ void chk_link(t_info *inf, char *buffer, size_t *pp, size_t x, size_t _len)
 
 	*pp = y;
 }
-
 /**
  * change_alias - tokenized string alias replacement
  * @inf: the struct parameter
  *
  * Return: 0 if not replaced, 1 otherwise
  */
-
-
 int change_alias(t_info *inf)
 {
 	int x = 0;
@@ -90,16 +84,13 @@ int change_alias(t_info *inf)
 		nodes = begin_node(inf->alias, inf->av[0], '=');
 		if (!nodes)
 			return (0);
-
 		free(inf->av[0]);
 		pp = _strchr(nodes->str, '=');
 		if (!pp)
 			return (0);
-
 		pp = _strdup(pp + 1);
 		if (!pp)
 			return (0);
-
 		inf->av[0] = pp;
 		x++;
 	}
@@ -128,7 +119,6 @@ int change_vars(t_info *inf)
 		x++;
 		continue;
 	}
-
 	if (!_strcmp(inf->av[x], "$?"))
 	{
 		change_string(&(inf->av[x]),
@@ -136,7 +126,6 @@ int change_vars(t_info *inf)
 		x++;
 		continue;
 	}
-
 	if (!_strcmp(inf->av[x], "$$"))
 	{
 		change_string(&(inf->av[x]),
@@ -144,7 +133,6 @@ int change_vars(t_info *inf)
 		x++;
 		continue;
 	}
-
 	nodes = begin_node(inf->env_list, &inf->av[x][1], '=');
 	if (nodes)
 	{
@@ -155,13 +143,10 @@ int change_vars(t_info *inf)
 	{
 		change_string(&(inf->av[x]), _strdup(""));
 	}
-
 	x++;
 	}
-
 	return (0);
 }
-
 
 /**
  * change_string - string replacement

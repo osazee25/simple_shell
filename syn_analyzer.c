@@ -7,8 +7,8 @@
  * Return: 0 if false or 1 if otherwise
  */
 
- int a_cmd(t_info *inf, char *paths)
- {
+int a_cmd(t_info *inf, char *paths)
+{
 	struct stat sts;
 
 	(void)inf;
@@ -28,7 +28,7 @@
  * duplicate_char - character duplication
  * @path_str: string path
  * @begin: begining index
- * @_stop: final index
+ * @end: final index
  *
  * Return: points to new buff
  */
@@ -64,13 +64,13 @@ char *get_path(t_info *inf, char *path_str, char *_cmd)
 	char *paths;
 
 	if (!path_str)
-	return NULL;
+	return (NULL);
 
 
 	if ((_strlen(_cmd) > 2) && begins_with(_cmd, "./"))
 	{
 	if (a_cmd(inf, _cmd))
-		return _cmd;
+		return (_cmd);
 	}
 
 	for (int x = 0; ; x++)
@@ -86,20 +86,13 @@ char *get_path(t_info *inf, char *path_str, char *_cmd)
 			{
 				_strcat(paths, "/");
 				_strcat(paths, _cmd);
- 			}
-
-
+			}
 			if (a_cmd(inf, paths))
 				return (paths);
-
-
 			if (!path_str[x])
 				break;
-
-
 			pres_pos = x + 1;
 		}
 	}
-
 	return (NULL);
 }

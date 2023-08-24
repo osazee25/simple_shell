@@ -23,7 +23,7 @@ char *_memset(char *src, char ch, unsigned int m)
 
 
 /**
- * ffree - string of strings is freed
+ * f_release - string of strings is freed
  * @ppl: strings' string
  */
 
@@ -79,4 +79,4 @@ void *_realloc(void *ptrr, unsigned int prev_sizee, unsigned int curr_sizee)
 
 	free(ptrr);
 	return (pp);
-} 
+}

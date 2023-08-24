@@ -106,7 +106,7 @@ t_list *begin_node(t_list *nodes, char *pref, char ch)
 		pt = begins_with(nodes->str, pref);
 		if (pt && (ch == -1 || *pt == ch))
 		{
-			return nodes;
+			return (nodes);
 		}
 	}
 	return (NULL);
@@ -114,7 +114,7 @@ t_list *begin_node(t_list *nodes, char *pref, char ch)
 
 /**
  * set_node_index - a function that gets node's index
- * @heads: list head ptr
+ * @hd: list head ptr
  * @nodes: node ptr
  * Return: -1 or node index
  */

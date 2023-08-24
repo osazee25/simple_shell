@@ -80,7 +80,7 @@ int get_inbuilt(t_info *inf)
 	}
 	x++;
 	}
-	return built_in_rt;
+	return (built_in_rt);
 }
 
 

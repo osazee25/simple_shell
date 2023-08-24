@@ -43,7 +43,7 @@ char *_strdup(const char *strr)
 
 	rt = malloc(sizeof(char) * (lengths + 1));
 	if (!rt)
-		return NULL;
+		return (NULL);
 
 	for (int i = 0; i <= lengths; i++)
 	{
@@ -94,5 +94,5 @@ int _putchar(char ch)
 	if (ch != BUFFER_FLUSH)
 		arr[x++] = ch;
 
-    return (1);
+	return (1);
 }

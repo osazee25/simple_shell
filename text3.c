@@ -3,7 +3,7 @@
 /**
  **_strncpy - string s copied
  *@dest: string to be copied destination
- *@src: the source 
+ *@src: the source
  *@count: length of characters
  *Return: string concatenated
  */

@@ -33,7 +33,7 @@ extern char **environ;
 /**
  * struct str_list -  linked list
  * @number: field for number
- * @string: field for string
+ * @str: field for string
  * @next: pointer to another node
  */
 typedef struct str_list
@@ -58,8 +58,8 @@ typedef struct str_list
  *@environ: environ copy from LL env
  *@hist: node of history
  *@alias: node of alias
- *@changed_env: environ change 
- *@stat: last executed command 
+ *@changed_env: environ change
+ *@stat: last executed command
  *@cmd_ads: pointer's address to command_bufffer
  *@cmd_type: command types
  *@read_file_desc: line input read from file descriptor
@@ -83,7 +83,7 @@ typedef struct data
 	int stat;
 
 	char **cmd_ads;
-	int cmd_type; 
+	int cmd_type;
 	int read_file_desc;
 	int hist_cnt;
 } t_info;
@@ -93,7 +93,7 @@ typedef struct data
 	0, 0, 0}
 
 /**
- *struct in_built - the inbuilt structure 
+ *struct in_built - the inbuilt structure
  *@flag_type: command flag builtings
  *@functn: function for the struct
  */
@@ -211,7 +211,7 @@ int hist_renum(t_info *);
 
 
 t_list *insert_node(t_list **, const char *, int);
-t_list *insert_node_end(t_list **,const char *, int);
+t_list *insert_node_end(t_list **, const char *, int);
 size_t put_str_list(const t_list *);
 int rem_node_at_index(t_list **, unsigned int);
 void clear_list(t_list **);

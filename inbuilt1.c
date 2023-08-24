@@ -30,7 +30,8 @@ int rem_alias(t_info *details, char *s)
 	temp_char = *equal_sign;
 	*equal_sign = '\0';
 
-	alias_index = set_node_index(details->alias, begin_node(details->alias, s, -1));
+	alias_index = set_node_index(details->alias,
+	begin_node(details->alias, s, -1));
 	ret = rem_node_at_index(&(details->alias), alias_index);
 
 	*equal_sign = temp_char;
@@ -56,7 +57,7 @@ int put_alias(t_info *details, char *s)
 		return (1);
 
 	if (!*++equal_sign)
-		return rem_alias(details, s);
+		return (rem_alias(details, s));
 
 	rem_alias(details, s);
 	return (insert_node_end(&(details->alias), s, 0) == NULL);

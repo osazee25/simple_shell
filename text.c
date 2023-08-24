@@ -2,7 +2,7 @@
 
 /**
  * _strlen - a function that returns the string len
- * @str: the string 
+ * @str: the string
  * Return: integer length of string
  */
 
@@ -11,7 +11,7 @@ int _strlen(const char *str)
 	int x = 0;
 
 	if (!str)
-	return 0;
+	return (0);
 
 	for (; *str != '\0'; str++)
 	x++;
@@ -41,9 +41,9 @@ int _strcmp(char *str1, char *str2)
 }
 
 /**
- * starts_with - if needle starts with haystack it's checked
- * @haystacks: searched string
- * @needles: found substring
+ * begins_with - if needle starts with haystack it's checked
+ * @soup: searched string
+ * @meat: found substring
  * Return: address of next char of haystack or NULL
  */
 
