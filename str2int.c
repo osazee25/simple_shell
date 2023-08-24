@@ -31,7 +31,7 @@ int interact(t_info *details)
 
 int is_delimiter(char ch, char *delimiter)
 {
-	int i,
+	int i;
 
 	for (i = 0; delimiter[i] != '\0'; i++)
 	{
