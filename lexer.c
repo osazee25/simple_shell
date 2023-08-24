@@ -27,7 +27,8 @@ char **str_token(char *strr, char *dc)
 	st = malloc((1 + n_word) * sizeof(char *));
 	if (!st)
 		return (NULL);
-	x, y = 0;
+	x = 0;
+	y = 0;
 	while (y < n_word)
 	{
 	while (is_delimiter(strr[x], dc))

@@ -166,11 +166,12 @@ int rem_node_at_index(t_list **hd, unsigned int _index)
 void clear_list(t_list **hd_ptr)
 {
 	t_list *next_node;
+	t_list *current;
 
 	if (!hd_ptr || !*hd_ptr)
 		return;
 
-	t_list *current = *hd_ptr;
+	current = *hd_ptr;
 
 	while (current)
 	{
